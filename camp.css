@@ -6,18 +6,16 @@ font-family: 'Sofia', cursive;
 */
 
 body {
-    font-family: 'Rum Raisin', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 20px;
-
+    font-family: 'Raleway', sans-serif;
     background: url(images/pinkSparkle.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    background-color: rgba(250, 250, 250, .8);
+    
 }
-
 
 /* change the link color */
 .navbar-custom .navbar-nav .nav-link {
@@ -38,6 +36,24 @@ body {
     
 }
 
+.btn-primary {
+    background-color: rgb(231, 3, 155);
+    border-color: rgb(250, 250, 250);
+}
+
+.display-5 {
+    font-family: 'Sofia', cursive;
+}
+
+.border-top {
+    border-color: rgb(231, 3, 155);
+}
+
 #nav-logo {
     max-height: 125px;
+}
+
+/*Home Page*/
+.home-hero {
+    background-color: rgba(250, 250, 250, .5); 
 }
