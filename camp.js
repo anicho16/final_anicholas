@@ -25,7 +25,7 @@ function run() {
  */
 
 function calculatePrice() {
-    
+
     let afterCare = document.getElementById('after-care').checked;
     let numberOfKids = document.getElementById('quantity').value;
     let weekCamp = document.getElementById('week-camp').checked;
@@ -69,7 +69,7 @@ function displayResults(selectedCamp, numberOfKids, totalCost, campResult) {
     document.getElementById('total-cost').innerHTML = totalCost;
 
     let children = document.getElementById('child');
-    if(numberOfKids> 1) {
+    if (numberOfKids > 1) {
         children.innerHTML = "children";
     } else {
         children.innerHTML = "child";
@@ -82,7 +82,7 @@ function displayResults(selectedCamp, numberOfKids, totalCost, campResult) {
  * 
  * @returns {boolean} true if the number is valid
  */
- function validateNumber() {
+function validateNumber() {
     let numberOfKids = document.getElementById('quantity').value;
     let campResult = document.getElementById('camp-result');
     const numberError = document.getElementById('number-error');
