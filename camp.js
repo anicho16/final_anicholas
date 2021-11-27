@@ -1,5 +1,20 @@
 
 /**
+ * Array requirement for dropdown. Functionality only implemented on index page to meet project requirement as this is not preferred method.
+ */
+
+document.addEventListener('DOMContentLoaded', addTeachers);
+
+function addTeachers() {
+    let list = document.getElementById('teacher-list');
+    let teachers = ["<li><a class=\"dropdown-item\" href=\"about.html#elsa\">Ms. Elsa</a></li>", "<li><a class=\"dropdown-item\" href=\"about.html#belle\">Ms. Belle</a></li>"];
+
+    for (const li of teachers) {
+        list.innerHTML += li;
+    }
+}
+
+/**
  * Pricing Calculator
  */
 
