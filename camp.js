@@ -3,15 +3,34 @@
  * Pricing Calculator
  */
 
-document.getElementById('price-submit').addEventListener('click', calculatePrice);
+document.getElementById('price-submit').addEventListener('click', run);
+
+/**
+ * Begins the process of validation, calculation, and displaying results.
+ */
+function run() {
+    event.preventDefault();
+    const result = document.getElementById('camp-result');
+
+    let validNumber = validateNumber();
+    if (!validNumber) {
+        result.classList.add('display-none');
+    } else {
+        calculatePrice();
+    }
+}
+
+/**
+ * Calculates the price of the camp
+ */
 
 function calculatePrice() {
-    event.preventDefault();
-
+    
     let afterCare = document.getElementById('after-care').checked;
     let numberOfKids = document.getElementById('quantity').value;
     let weekCamp = document.getElementById('week-camp').checked;
     let dayCamp = document.getElementById('day-camp').checked;
+    let campResult = document.getElementById('camp-result');
 
     const typeOfCamp = document.querySelectorAll('input[name="campType"]');
     let campPrice;
@@ -33,10 +52,18 @@ function calculatePrice() {
         totalCost = numberOfKids * campPrice;
     }
 
-    displayResults(selectedCamp, numberOfKids, totalCost);
+    displayResults(selectedCamp, numberOfKids, totalCost, campResult);
 }
 
-function displayResults(selectedCamp, numberOfKids, totalCost) {
+/**
+ * Displays results after price is calculated.
+ * 
+ * @param {String} selectedCamp 
+ * @param {int} numberOfKids 
+ * @param {int} totalCost 
+ * @param {Element} campResult 
+ */
+function displayResults(selectedCamp, numberOfKids, totalCost, campResult) {
     document.getElementById('selected-camp').innerHTML = selectedCamp;
     document.getElementById('quantity-kids').innerHTML = numberOfKids;
     document.getElementById('total-cost').innerHTML = totalCost;
@@ -47,8 +74,27 @@ function displayResults(selectedCamp, numberOfKids, totalCost) {
     } else {
         children.innerHTML = "child";
     }
-    let campResult = document.getElementById('camp-result');
     campResult.classList.remove('d-none');
+}
+
+/**
+ * Validates whether the number entered in the form field is positive
+ * 
+ * @returns {boolean} true if the number is valid
+ */
+ function validateNumber() {
+    let numberOfKids = document.getElementById('quantity').value;
+    let campResult = document.getElementById('camp-result');
+    const numberError = document.getElementById('number-error');
+
+    if (numberOfKids == "" || parseInt(numberOfKids) < 1) {
+        numberError.classList.remove('d-none');
+        campResult.classList.add('d-none');
+        return false;
+    } else {
+        numberError.classList.add('d-none');
+        return true;
+    }
 }
 
 
