@@ -73,11 +73,31 @@ body {
 
 @media only screen and (max-width: 600px) {
 
-    .custom-footer, .custom-nav {
-        position: relative;
+
+    /*Home Page*/
+
+    .custom-nav {
+        position: absolute;
     }
 
-    .home-hero {
-        margin-top: -100px;
+    .custom-footer {
+        position: relative;
+        padding-top: 100px;
+    }
+
+    #home-logo {
+        margin-top: 160px;
+    }
+
+    /*Services Page*/
+
+    .album > img {
+        max-height: 200px;
+    }
+
+    /*Pricing*/
+
+    #price-tool {
+        max-width: 90%;
     }
 }
