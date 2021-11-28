@@ -70,3 +70,14 @@ body {
 #class-ul {
     height: 150px;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .custom-footer, .custom-nav {
+        position: relative;
+    }
+
+    .home-hero {
+        margin-top: -100px;
+    }
+}
